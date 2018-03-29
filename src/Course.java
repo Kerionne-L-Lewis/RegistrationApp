@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
-public class Curriculum {
+public class Course {
     private String department;
     private  String courseNumber;
     private Integer creditHours;
 
-    public Curriculum(String department, String courseNumber,
-                      Integer creditHours) {
+    public Course(String department, String courseNumber,
+                  Integer creditHours) {
         this.department = department;
         this.courseNumber = courseNumber;
         this.creditHours = creditHours;
@@ -25,10 +25,7 @@ public class Curriculum {
     @Override
     public String toString() {
         return
-                "Department[" + department +
-                "] CourseNumber[" + courseNumber +
-                "] CreditHours[" + creditHours +
-                "] ||";
+                "\n"+department +" " + courseNumber +" " + creditHours;
     }
 
 
