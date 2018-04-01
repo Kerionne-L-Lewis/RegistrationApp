@@ -8,17 +8,18 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("\n\nHello, RegistrationApp!\n");
 
-          ArrayList<Course>dataFromCurriculumFile=readFromFile();
-          dataToStdout(dataFromCurriculumFile);
+        Curriculum curriculum = new Curriculum( "curriculum.dat" );
+        System.out.println( "\nCurriculum:\n" + curriculum );
 
-       int totalHours=totalHrsCurriculum(dataFromCurriculumFile);
+        int totalHours=curriculum.totalHrsCurriculum();
         System.out.println("\n||Total hours in Curriculum " + totalHours + "||");
 
-        int counter = countNumDept(dataFromCurriculumFile);
-        System.out.println("How many courses are in the Curriculum? " + counter);
+        int counter = curriculum.countNumDept("CPSC");
+        System.out.println("How many CPSC courses are in the Curriculum? " + counter);
 
-        boolean isCourseInCurriculum=checkForCourse(dataFromCurriculumFile, "MATH","1070",4);
-        System.out.println("Is this course in the Curriculum ?" + isCourseInCurriculum);
+        boolean isCourseInCurriculum=curriculum.checkForCourse("MATH 1070");
+        System.out.println("Is MATH 1070 in the Curriculum?" + isCourseInCurriculum);
+
     }
 
     private static boolean checkForCourse(ArrayList<Course> dataFromCurriculumFile, Course course) {
