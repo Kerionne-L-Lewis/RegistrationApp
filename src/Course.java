@@ -6,16 +6,6 @@ public class Course {
     private  String courseNumber;
     private Integer creditHours;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Course)) return false;
-        Course course = (Course) o;
-        return Objects.equals(getDepartment(), course.getDepartment()) &&
-                Objects.equals(getCourseNumber(), course.getCourseNumber());
-    }
-
-
 
     public Course(String department, String courseNumber,
                   Integer creditHours) {
@@ -38,6 +28,15 @@ public class Course {
     public String toString() {
         return
                 "\n"+department +" " + courseNumber +" " + creditHours;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Course)) return false;
+        Course course = (Course) o;
+        return Objects.equals(getDepartment(), course.getDepartment()) &&
+                Objects.equals(getCourseNumber(), course.getCourseNumber());
     }
 
 

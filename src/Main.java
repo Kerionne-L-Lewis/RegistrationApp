@@ -1,7 +1,4 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Scanner;
+
 
 public class Main {
 
@@ -20,9 +17,10 @@ public class Main {
         boolean isCourseInCurriculum=curriculum.checkForCourse("MATH 1070");
         System.out.println("Is MATH 1070 in the Curriculum?" + isCourseInCurriculum);
 
+        Transcript transcript = new Transcript("Transcript.txt");
+        System.out.println("\nMary's Transcript " + transcript);
 
     }
-
 
 
 }
