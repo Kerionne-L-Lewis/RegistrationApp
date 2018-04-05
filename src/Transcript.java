@@ -29,8 +29,48 @@ public class Transcript {
         }
     }
 
+    public int totalHrsTranscript() {
+        int total =0;
+        for (int i = 0; i <transcript.size() ; i++) {
+            total= transcript.get(i).getCreditHours() +total;
+        }
+        return total;
+    }
+
+
+    public  boolean checkForCourse(String dept, String num, int hours, ArrayList curriculum) {
+        boolean check = false;
+        if( curriculum.contains( new Course( dept, num, hours ) )) {
+            check = true;
+        }
+        return check;
+    }
+
+    public boolean checkForCourse(String dept, String num, int hours) {
+        boolean check = false;
+        if(transcript.contains(new Course(dept, num, hours))){
+            check = true;
+        }
+        return check;
+    }
+
+    public boolean checkTranscript(ArrayList<Course> curriculum){
+        boolean check=false;
+        for (int i = 0; i <curriculum.size() ; i++) {
+            if (transcript.containsAll(curriculum)){
+                check=true;
+            }
+        }
+            return check;
+
+    }
+
+
     @Override
     public String toString() {
         return "" + transcript;
     }
+
+
+
 }

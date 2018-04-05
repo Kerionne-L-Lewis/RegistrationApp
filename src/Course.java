@@ -1,3 +1,4 @@
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -5,6 +6,7 @@ public class Course {
     private String department;
     private  String courseNumber;
     private Integer creditHours;
+    private LocalTime time;
 
 
     public Course(String department, String courseNumber,
@@ -13,6 +15,15 @@ public class Course {
         this.courseNumber = courseNumber;
         this.creditHours = creditHours;
     }
+
+    public Course(String department, String courseNumber, int creditHours, LocalTime time) {
+        this.department = department;
+        this.courseNumber = courseNumber;
+        this.creditHours = creditHours;
+        this.time=time;
+
+    }
+
     public String getDepartment() {
         return department;
     }

@@ -5,7 +5,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Curriculum {
-    private ArrayList<Course> curriculum;
+    public ArrayList<Course> curriculum;
 
     public Curriculum(String s) {
         File readFromFile = new File(s);
@@ -47,12 +47,10 @@ public class Curriculum {
         return count;
     }
 
-    public  boolean checkForCourse(String course) {
+    public  boolean checkForCourse(String dept,String num, int hours) {
         boolean check = false;
-        for (int i = 0; i <curriculum.size() ; i++) {
-            if (curriculum.get(i).equals(course)){
-                check=true;
-            }
+        if( curriculum.contains( new Course( dept, num, hours ) )) {
+            check= true;
         }
         return check;
     }
